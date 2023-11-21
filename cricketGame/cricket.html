@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cricket Game</title>
+  <link rel="stylesheet" href="cricket.css">
+</head>
+
+<body>
+  <h1>Bat Ball Stump Game</h1>
+  <button onclick="getResult('bat',generateRandom()); "> Bat </button>
+
+  <button onclick="getResult('ball',generateRandom());"> Ball </button>
+
+  <button onclick=" getResult('stumps',generateRandom());"> Stump </button>
+
+  <script>
+    function generateRandom() {
+      let randomNumber = Math.random() * 3;
+
+      if (randomNumber > 0 && randomNumber <= 1) {
+        return 'bat';
+      }
+      else if (randomNumber > 1 && randomNumber <= 2) {
+        return 'ball';
+      }
+      else {
+        return 'stumps';
+      }
+    }
+
+function getResult(userMove, computerMove) {
+  if (userMove === 'bat') {
+   if (computerMove === 'ball') {
+      return alert('You Won Computer has chosen ball');
+          }
+    else if (computerMove === 'stumps') {
+      return alert('You lost Computer has chosen stumps');
+
+          }
+    else {
+            return alert('Tie Computer has chosen bat');
+          }
+        }
+  else if (userMove === 'ball') {
+    if (computerMove === 'ball') {
+      return alert('Tie Computer has chosen ball');
+          }
+    else if (computerMove === 'stumps') {
+      return alert('You Won Computer has chosen stumps');
+
+          }
+    else {
+       return alert('You Lost Computer has chosen bat');
+          }
+        }
+  else {
+    if (computerMove === 'stumps') {
+    return alert('Tie Computer has chosen stumps');
+
+          }
+    else if (computerMove === 'bat') {
+      return alert('You Won Computer has chosen bat');
+          }
+    else {
+      return alert('You lost Computer has chosen ball');
+          }
+        }
+      }
+      
+  </script>
+</body>
+
+</html>
